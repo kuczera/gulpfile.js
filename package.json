@@ -1,0 +1,22 @@
+{
+  "name": "histograph-giii",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.0.1",
+    "gulp": "^3.9.1",
+    "gulp-dest": "^0.2.3",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-size": "^2.1.0",
+    "lodash": "^4.14.2",
+    "neo4j-driver": "^1.1.0-M01",
+    "xml2js": "^0.4.17"
+  }
+}
