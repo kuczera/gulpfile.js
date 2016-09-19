@@ -10,13 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "async": "^2.0.1",
+    "cli-color": "^1.1.0",
     "gulp": "^3.9.1",
     "gulp-dest": "^0.2.3",
+    "gulp-download": "0.0.1",
     "gulp-load-plugins": "^1.2.4",
     "gulp-rename": "^1.2.2",
     "gulp-size": "^2.1.0",
     "lodash": "^4.14.2",
+    "moment": "^2.14.1",
     "neo4j-driver": "^1.1.0-M01",
+    "request": "^2.74.0",
+    "slug": "^0.9.1",
     "xml2js": "^0.4.17"
   }
 }
