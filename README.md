@@ -31,3 +31,7 @@ parse the regesta files
   
   	cd histograph
   	node scripts/manage.js --task=import.fromJSON --src=/path/to/regestae-json/**/*.json
+
+## 6. Change labels (in histrograph database)
+
+    MATCH (n:person) WHERE n.name_search =~ '.*stadt.*//.*' REMOVE n:person SET n:location

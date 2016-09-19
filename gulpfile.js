@@ -131,6 +131,7 @@ gulp.task('distill-regestae', function() {
           
           // parse object tree with lodash
           _({
+            identifier: 'cei.charter[0].chDesc[0].head[0].idno[0]',
             title_de: 'cei.teiHeader[0].fileDesc[0].titleStmt[0].title[0]',
             name: 'cei.teiHeader[0].fileDesc[0].titleStmt[0].title[0]',
             caption_de: 'cei.charter[0].chDesc[0].abstract[0].p[0]',
@@ -186,7 +187,9 @@ gulp.task('distill-regestae', function() {
           // get the "nummer" for neo4j connection
           neo4jRegestaId = '#' + [
             +(node.volume),
-            node.url.match(/[_-]([\da-zA-Z]+)$/)[1].replace(/^0+/,'')
+            node.identifier.match(/[\da-zA-Z]+$/)[0]
+            // @deprecated: 
+            // node.url.match(/[_-]([\da-zA-Z]+)$/)[1].replace(/^0+/,'')
           ].join('-')
 
           node.regesta = neo4jRegestaId;
