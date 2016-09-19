@@ -125,6 +125,7 @@ gulp.task('distill-regestae', function() {
         xml2js(file.contents, function(err, result){
           if(err) {
             console.log(err);
+            file.contents = new Buffer(JSON.stringify({error:'xml not valid'}));
             done(null, file);
           }
           
@@ -174,6 +175,7 @@ gulp.task('distill-regestae', function() {
           if(!node.url) {
             // console.log(result)
             console.log(clc.redBright('  uri not found:'), file.path);
+            file.contents = new Buffer(JSON.stringify({error: 'uri not found, xml is invalid'}));
             done(null, file);
             return;
           }
