@@ -123,8 +123,10 @@ gulp.task('distill-regestae', function() {
           
         // parse xml file
         xml2js(file.contents, function(err, result){
-          if(err)
-            throw err;
+          if(err) {
+            console.log(err);
+            done(null, file);
+          }
           
           // parse object tree with lodash
           _({
