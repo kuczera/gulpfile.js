@@ -208,11 +208,16 @@ gulp.task('distill-regestae', function() {
 
             _(triplets).filter('r').each(function(d, i) {
               
+              if(!d.t.name3 && !d.t.name2){
+                console.log(clc.redBright('  skipping node'), clc.magentaBright('(n:Lemma {xmlid:"'+d.t.xmlid+'"})'), 'no name was found')
+                return;
+              }
+
               var entitySlug = d.t.id;
               graph.nodes.push({
                 slug: entitySlug,
                 type: 'person',
-                name: d.t.name3,
+                name: d.t.name3 || d.t.name2,
                 description: d.t.name3,
                 links_xmlid: d.t.xmlid
               });
