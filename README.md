@@ -35,3 +35,8 @@ parse the regesta files
 ## 6. Change labels (in histrograph database)
 
     MATCH (n:person) WHERE n.name_search =~ '.*stadt.*//.*' REMOVE n:person SET n:location
+    
+## 7. Add Full-Text-Search
+    
+    MATCH (n:resource) WHERE not(has(n.full_search)) WITH n SET n.full_search = LOWER(n.name + ' ' + n.caption_de), n.title_search = LOWER(n.name);
+    MATCH (n:resource) SET n.full_search = n.full_search;
